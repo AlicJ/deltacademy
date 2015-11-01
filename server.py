@@ -88,6 +88,10 @@ def create_app(configfile=None):
     def lib():
         return render_template("lib.html")
 
+    @app.route('/computer', methods=('GET', 'POST'))
+    def computer():
+        return render_template("computer.html")
+
     @app.route('/img/<filename>')
     def send_img(filename):
         return send_from_directory(app.config['img'], filename)

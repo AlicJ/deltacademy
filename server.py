@@ -10,8 +10,6 @@ from wtforms.validators import Required
 from urllib import unquote
 from HTMLParser import HTMLParser as hp
 
-
-
 # straight from the wtforms docs:
 class TelephoneForm(Form):
     country_code = IntegerField('Country Code', [validators.required()])
@@ -77,6 +75,10 @@ def create_app(configfile=None):
         #flash('different message', 'different')
         #flash('uncategorized message')
         return render_template('test2.html', form=form)
+
+    @app.route('/edu', methods=('GET', 'POST'))
+    def edu():
+        return render_template("edu.html")
 
     return app
 

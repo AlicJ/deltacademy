@@ -74,11 +74,23 @@ def create_app(configfile=None):
         #flash('debug message', 'debug')
         #flash('different message', 'different')
         #flash('uncategorized message')
-        return render_template('test2.html', form=form)
+        return render_template('index.html', form=form)
 
     @app.route('/edu', methods=('GET', 'POST'))
     def edu():
         return render_template("edu.html")
+
+    @app.route('/addict', methods=('GET', 'POST'))
+    def addict():
+        return render_template("addict.html")
+
+    @app.route('/lib', methods=('GET', 'POST'))
+    def lib():
+        return render_template("lib.html")
+
+    @app.route('/img/<filename>')
+    def send_img(filename):
+        return send_from_directory(app.config['img'], filename)
 
     return app
 

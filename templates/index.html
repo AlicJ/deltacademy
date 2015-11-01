@@ -1,0 +1,146 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/fixes.html" as fixes %}
+{% import "bootstrap/utils.html" as util %}
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	{% block content %}
+	{{util.flashed_messages()}}
+
+	<style type="text/css" media="screen">
+	 body {
+	 	font-size: 14px;
+	 	font-family: ubuntu;
+	 	background: #f5feff;
+	 }
+	 	a {
+	 		color: black;
+	 	}
+		a:hover {
+			text-decoration: none;
+			color: black;
+		}
+
+		.block {
+			padding: 15px;
+			border: 1px solid #999;
+			height: 300px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-bottom: 35px;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,ededed+100;White+3D+%231 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(133,96,168,0.25) 47%, rgba(133,96,168,0.6) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(133,96,168,0.25)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(133,96,168,0.25) 47%,rgba(133,96,168,0.6) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(133,96,168,0.25) 47%,rgba(133,96,168,0.6) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(133,96,168,0.25) 47%,rgba(133,96,168,0.6) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(133,96,168,0.25) 47%,rgba(133,96,168,0.6) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+		}
+		.block .title {
+			text-align: center;
+			font-size: 24px;
+			color: #8560a8;
+		}
+
+		.block .icon {
+			width: 150px;
+			margin: 0 auto 10px;
+		}
+
+		.block .icon img{
+			width: 150px;
+		}
+
+		.block:hover {
+			box-shadow: 0 0 5px #999;
+		}
+
+		#header {
+			margin-bottom: 50px;
+		}
+
+	</style>
+	<header id="header" class="">
+		<img class="img-responsive" style="display:block;margin-left:auto;margin-right:auto;" src="https://primop.me/logo2.png"></img>
+	</header><!-- /header -->
+	<div class="container">
+
+		<div class="col-md-4">
+			<a href="/edu">
+				<div class="block">
+					<p class="title">Education</p>
+					<div class="icon">
+						<img src="{{ url_for('static', filename = 'img/edu.png') }}" alt="">
+					</div>
+					<p class="content">
+						Learn about why education is important for you, and how you can get help in order to achive academic success.
+					</p>
+					
+				</div>
+			</a>
+		</div>
+
+		<div class="col-md-4">
+			<a href="/addict">
+				<div class="block">
+					<p class="title">Drug Abuse</p>
+					<div class="icon">
+						<img src="{{ url_for('static', filename = 'img/addict.png') }}" alt="">
+					</div>
+					<p class="content">
+						Learn about what is drug abuse, what it does to your body and mind, and how to get help.
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-md-4">
+			<a href="/lib">
+				<div class="block">
+					<p class="title">Library Circulation</p>
+					<div class="icon">
+						<img src="{{ url_for('static', filename = 'img/lib.png') }}" alt="">
+					</div>
+					<p class="content">
+						Learn about the libraries around you, how you can get help from them, and how they can help you.
+					</p>
+					
+				</div>
+			</a>
+		</div>
+
+		<div class="col-md-4">
+			<a href="/computer">
+				<div class="block">
+					<p class="title">Computer Literacy</p>
+					<div class="icon">
+						<img src="{{ url_for('static', filename = 'img/computer.png') }}" alt="">
+					</div>
+					<p class="content">
+						Learn about how computer can help you achieve academic success and career success.
+					</p>
+					
+				</div>
+			</a>
+		</div>
+
+
+		</div>
+		{% endblock %}
+		{% block head %}
+		{{super()}}
+		{{fixes.ie8()}}
+		{% endblock %}
+
+	</body>
+	</html>

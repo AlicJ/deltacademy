@@ -46,6 +46,18 @@ background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(133,96,168,0.25
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 		}
+
+		.bg2 {
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(26,129,239,0.25) 47%, rgba(26,129,239,0.6) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(26,129,239,0.25)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(26,129,239,0.25) 47%,rgba(26,129,239,0.6) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(26,129,239,0.25) 47%,rgba(26,129,239,0.6) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(26,129,239,0.25) 47%,rgba(26,129,239,0.6) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(26,129,239,0.25) 47%,rgba(26,129,239,0.6) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+		}
 		.block .title {
 			text-align: center;
 			font-size: 24px;
@@ -69,9 +81,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			margin-bottom: 50px;
 		}
 
+		.article .title {
+			font-size: 30px;
+			border-bottom: 1px solid black;
+		}
+
+		.readmore {
+			color: rgba(11, 124, 244, 1);
+		}
+
+		#footer {
+			padding: 25px;
+			margin-top: 50px;
+			height: 100px;
+			background-color: #ECECEC;
+		}
+
 	</style>
 	<header id="header" class="">
-		<img class="img-responsive" style="display:block;margin-left:auto;margin-right:auto;" src="https://primop.me/logo2.png"></img>
+		<img class="img-responsive" style="display:block;margin-left:auto;margin-right:auto;" src="{{ url_for('static', filename = 'img/logo/logo2.png') }}"></img>
 	</header><!-- /header -->
 	<div class="container">
 
@@ -80,7 +108,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="block">
 					<p class="title">Education</p>
 					<div class="icon">
-						<img src="{{ url_for('static', filename = 'img/edu.png') }}" alt="">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/edu.png') }}" alt="">
 					</div>
 					<p class="content">
 						Learn about why education is important for you, and how you can get help in order to achive academic success.
@@ -95,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="block">
 					<p class="title">Drug Abuse</p>
 					<div class="icon">
-						<img src="{{ url_for('static', filename = 'img/addict.png') }}" alt="">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/addict.png') }}" alt="">
 					</div>
 					<p class="content">
 						Learn about what is drug abuse, what it does to your body and mind, and how to get help.
@@ -109,7 +137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 				<div class="block">
 					<p class="title">Library Circulation</p>
 					<div class="icon">
-						<img src="{{ url_for('static', filename = 'img/lib.png') }}" alt="">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/lib.png') }}" alt="">
 					</div>
 					<p class="content">
 						Learn about the libraries around you, how you can get help from them, and how they can help you.
@@ -121,10 +149,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 		<div class="col-md-4">
 			<a href="/computer">
-				<div class="block">
+				<div class="block bg2">
 					<p class="title">Computer Literacy</p>
 					<div class="icon">
-						<img src="{{ url_for('static', filename = 'img/computer.png') }}" alt="">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/computer.png') }}" alt="">
 					</div>
 					<p class="content">
 						Learn about how computer can help you achieve academic success and career success.
@@ -136,10 +164,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 		<div class="col-md-4">
 			<a href="/social">
-				<div class="block">
+				<div class="block bg2">
 					<p class="title">Social Initiatives</p>
 					<div class="icon">
-						<img src="{{ url_for('static', filename = 'img/social.png') }}" alt="">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/social.png') }}" alt="">
 					</div>
 					<p class="content">
 						Resources for initiating community change.
@@ -149,8 +177,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			</a>
 		</div>
 
+		<div class="col-md-4">
+			<a href="/volunteer">
+				<div class="block bg2">
+					<p class="title">Volunteering Opportunities</p>
+					<div class="icon">
+						<img  class="img-responsive" src="{{ url_for('static', filename = 'img/volunteer.png') }}" alt="">
+					</div>
+					<p class="content">
+						Resources for initiating community change.
+					</p>
+					
+				</div>
+			</a>
+		</div>
+
+		<div class="col-md-6 article">
+			<p class="title">Reflection on Codecademy</p>
+			<p class="authur">Wesley Kerfoot</p>
+			<p class="content">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique orci nec purus sagittis tempor. Mauris fermentum finibus gravida. Mauris pharetra ornare urna, at egestas sapien lobortis eu. In hac habitasse platea dictumst. Etiam congue vestibulum nibh, sed molestie tortor blandit ut. Nulla facilisi. Fusce tortor ante, cursus in finibus in, semper eu mi.
+<br>
+<br>
+Curabitur et ligula nibh. Pellentesque faucibus odio eu erat lobortis elementum. Donec ultricies, neque non consectetur bibendum, quam est cursus quam, ut mattis tellus diam vel enim. Pellentesque nulla arcu, molestie vitae tristique sit amet, laoreet eu arcu. Ut eleifend eget sapien id posuere. Donec dictum, dui at dignissim vehicula, lorem lacus commodo metus, nec venenatis metus ligula vitae dui. Duis porttitor elementum egestas. <a class="readmore" href="">read more</a>
+			</p>
 
 		</div>
+
+		<div class="col-md-6 article">
+			<p class="title">Reflection on Typing</p>
+			<p class="authur">Wesley Kerfoot</p>
+			<p class="content">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique orci nec purus sagittis tempor. Mauris fermentum finibus gravida. Mauris pharetra ornare urna, at egestas sapien lobortis eu. In hac habitasse platea dictumst. Etiam congue vestibulum nibh, sed molestie tortor blandit ut. Nulla facilisi. Fusce tortor ante, cursus in finibus in, semper eu mi.
+<br>
+<br>
+Curabitur et ligula nibh. Pellentesque faucibus odio eu erat lobortis elementum. Donec ultricies, neque non consectetur bibendum, quam est cursus quam, ut mattis tellus diam vel enim. Pellentesque nulla arcu, molestie vitae tristique sit amet, laoreet eu arcu. Ut eleifend eget sapien id posuere. Donec dictum, dui at dignissim vehicula, lorem lacus commodo metus, nec venenatis metus ligula vitae dui. Duis porttitor elementum egestas. <a class="readmore" href="">read more</a>
+			</p>
+
+		</div>
+
+
+		</div>
+
+		<div id="footer"><div class="container">
+			© 2015 deltacademy All rights reserved
+		</div></div>
 		{% endblock %}
 		{% block head %}
 		{{super()}}

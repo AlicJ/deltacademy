@@ -92,6 +92,14 @@ def create_app(configfile=None):
     def computer():
         return render_template("computer.html")
 
+    @app.route('/social', methods=('GET', 'POST'))
+    def social():
+        return render_template("social.html")
+
+    @app.route('/volunteer', methods=('GET', 'POST'))
+    def volunteer():
+        return render_template("volunteer.html")
+
     @app.route('/img/<filename>')
     def send_img(filename):
         return send_from_directory(app.config['img'], filename)

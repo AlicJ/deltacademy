@@ -91,7 +91,7 @@ def create_app(configfile=None):
         #flash('warning message', 'warning')
         # Your garden <name>
         # What do your water levels look like?
-        flash('Deltacademy', 'info')
+        #flash('Deltacademy', 'info')
         # you need to add <amount> of water
         # you will need to add water in <n> days
         # your garden has enough water right now

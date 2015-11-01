@@ -7,8 +7,6 @@ from flask_wtf.file import FileField
 from wtforms import TextField, HiddenField, ValidationError, RadioField,\
     BooleanField, SubmitField, IntegerField, FormField, validators
 from wtforms.validators import Required
-import pygal
-import pygal.style as ps
 import lxml.html as lxh
 from urllib import unquote
 from HTMLParser import HTMLParser as hp
@@ -50,25 +48,6 @@ class ExampleForm(Form):
 
     def validate_hidden_field(form, field):
         raise ValidationError('Always wrong')
-
-
-def generate_graph():
-    custom_style = ps.Style(
-     background='transparent',
-     plot_background='white',
-     foreground='#53E89B',
-     foreground_light='white',
-     foreground_dark='white',
-     opacity='.6',
-     opacity_hover='.9',
-     transition='400ms ease-in',
-     colors=('green', '#E8537A', '#E95355', '#E87653', '#E89B53'))
-
-    barchart = pygal.Bar(show_legend=False, human_readable=True, rounded_bars=20, style=custom_style)
-    barchart.add("", [1,2,3])
-    barchart.value_formatter = lambda _: ""
-    barchart.x_labels = ("Nutrients", "Water", "Ph")
-    return unquote(hp().unescape(lxh.tostring(barchart.render_tree())))
 
 def create_app(configfile=None):
     app = Flask(__name__)

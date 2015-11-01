@@ -7,7 +7,6 @@ from flask_wtf.file import FileField
 from wtforms import TextField, HiddenField, ValidationError, RadioField,\
     BooleanField, SubmitField, IntegerField, FormField, validators
 from wtforms.validators import Required
-import lxml.html as lxh
 from urllib import unquote
 from HTMLParser import HTMLParser as hp
 

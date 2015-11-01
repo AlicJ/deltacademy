@@ -49,3 +49,11 @@ bar_chart = pygal.StackedBar(style=LightGreenStyle)
 bar_chart.x_labels = smoker_years
 bar_chart.add("Smoking Rates per year (percentage)", smokers)
 bar_chart.render_to_file("smoking.svg")
+
+earnings = [31800, 21200, 25500, 32700, 32700, 48600]
+levels = ["All levels", "No diploma", "High school", "Trades", "College", "University"]
+
+bar_chart = pygal.StackedBar(style=LightGreenStyle)
+bar_chart.x_labels = levels
+bar_chart.add("Earnings by education", earnings)
+bar_chart.render_to_file("income_education.svg")
